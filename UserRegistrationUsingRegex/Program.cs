@@ -48,16 +48,17 @@ namespace UserRegistrationUsingRegex
             else
                 Console.WriteLine("Invalid Mobile Number");
         }
-        internal void PasswordRegex(string PasswordRule1)
+        internal void PasswordRule1Regex(string PasswordRule1)
         {
-            Regex Passwordregex = new Regex(@"^.{8,}$");
-            Console.WriteLine("Mobile Numbe: " + PasswordRule1);
+            Regex PasswordRule1regex = new Regex(@"^.{8,}$");
+            Console.WriteLine("Password: " + PasswordRule1);
 
-            if (Passwordregex.IsMatch(PasswordRule1))
+            if (PasswordRule1regex.IsMatch(PasswordRule1))
                 Console.WriteLine("Valid Password");
             else
                 Console.WriteLine("Invalid Password");
         }
+        
     }
     class Program
     {
@@ -65,16 +66,17 @@ namespace UserRegistrationUsingRegex
         static void Main(string[] args)
         {
             UserRegex userRegex = new UserRegex();
-            string Firstname = "Dilip";
-            string LastName = "Rathod";
-            string Email = "abc.xyz@bl.co.in";
-            string MobileNumber="91 7756994045";
-            string PasswordRule1 = "Admin@1234";
+            string Firstname = "Dilip";//valid
+            string LastName = "Rathod";//valid
+            string Email = "abc.xyz@bl.co.in";//valid
+            string MobileNumber="91 7756994045";//valid
+            string PasswordRule1 = "admin@1";//valid
             userRegex.FirstNameRegex(Firstname);
             userRegex.LastNameRegex(LastName);
             userRegex.EmailRegex(Email);
             userRegex.MobileNumberRegex(MobileNumber);
-            userRegex.PasswordRegex(PasswordRule1);
+            userRegex.PasswordRule1Regex(PasswordRule1);
+           
         }
     }
 }
