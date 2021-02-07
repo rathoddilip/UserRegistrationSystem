@@ -71,9 +71,19 @@ namespace UserRegistrationUsingRegex
         internal void PasswordRule3Regex(string PasswordRule3)
         {
             Regex PasswordRule3regex = new Regex(@"^(?=.*[A-Z])(?=.*\d).{8,}$");
-            Console.WriteLine("PasswordRule2: " + PasswordRule3);
+            Console.WriteLine("PasswordRule3: " + PasswordRule3);
 
             if (PasswordRule3regex.IsMatch(PasswordRule3))
+                Console.WriteLine("Valid Password");
+            else
+                Console.WriteLine("Invalid Password");
+        }
+        internal void PasswordRule4Regex(string PasswordRule4)
+        {
+            Regex PasswordRule4regex = new Regex(@"^(?=.{8,}$)(?=[^A-Z]*[A-Z][^A-Z]*$)\w*\W\w*$");
+            Console.WriteLine("PasswordRule4: " + PasswordRule4);
+
+            if (PasswordRule4regex.IsMatch(PasswordRule4))
                 Console.WriteLine("Valid Password");
             else
                 Console.WriteLine("Invalid Password");
@@ -90,9 +100,10 @@ namespace UserRegistrationUsingRegex
             string LastName = "Rathod";//valid
             string Email = "abc.xyz@bl.co.in";//valid
             string MobileNumber="91 7756994045";//valid
-            string PasswordRule1 = "Adm*in@12&3$&";//valid
-            string PasswordRule2 = "ad$$&didDdsfsn41";//valid
-            string PasswordRule3 = "ad$$&did3Ddsfsn";//valid
+            string PasswordRule1 = "Admin@12&3$&";//valid-Minimum 8 charachter
+            string PasswordRule2 = "ad$$&didDdsfsn41";//valid-atleast 1 uppercase character-all rules passed
+            string PasswordRule3 = "ad$$&did3Ddsfsn";//valid-atleast 1 numeric number 
+            string PasswordRule4 = "aff&sdfA9";//valid-exactly 1 special character
             userRegex.FirstNameRegex(Firstname);
             userRegex.LastNameRegex(LastName);
             userRegex.EmailRegex(Email);
@@ -100,6 +111,7 @@ namespace UserRegistrationUsingRegex
             userRegex.PasswordRule1Regex(PasswordRule1);
             userRegex.PasswordRule2Regex(PasswordRule2);
             userRegex.PasswordRule3Regex(PasswordRule3);
+            userRegex.PasswordRule4Regex(PasswordRule4);
 
         }
     }
