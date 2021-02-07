@@ -17,6 +17,16 @@ namespace UserRegistrationUsingRegex
             else
                 Console.WriteLine("Invalid first name");
         }
+        internal void LastNameRegex(string LastName)
+        {
+            Regex LastNameregex = new Regex("^[A-Z][a-zA-Z]{2,}$");
+            Console.WriteLine("Firstname: " + LastName);
+
+            if (LastNameregex.IsMatch(LastName))
+                Console.WriteLine("Valid last name");
+            else
+                Console.WriteLine("Invalid last name");
+        }
     }
     class Program
     {
@@ -25,7 +35,9 @@ namespace UserRegistrationUsingRegex
         {
             UserRegex userRegex = new UserRegex();
             string Firstname = "Dilip";
+            string LastName = "Rathod";
             userRegex.FirstNameRegex(Firstname);
+            userRegex.LastNameRegex(LastName);
         }
     }
 }
