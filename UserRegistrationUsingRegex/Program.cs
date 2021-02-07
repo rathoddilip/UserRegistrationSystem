@@ -38,6 +38,16 @@ namespace UserRegistrationUsingRegex
                 Console.WriteLine("Invalid EmailId");
         }
 
+        internal void MobileNumberRegex(string MobileNumber)
+        {
+            Regex MobileNumberregex = new Regex(@"^[0-9]{2,}\s[0-9]{10,}$");
+            Console.WriteLine("Mobile Numbe: " + MobileNumber);
+
+            if (MobileNumberregex.IsMatch(MobileNumber))
+                Console.WriteLine("Valid Mobile Numbe");
+            else
+                Console.WriteLine("Invalid Mobile Numbe");
+        }
     }
     class Program
     {
@@ -48,9 +58,11 @@ namespace UserRegistrationUsingRegex
             string Firstname = "Dilip";
             string LastName = "Rathod";
             string Email = "abc.xyz@bl.co.in";
+            string MobileNumber="91 7756994045";
             userRegex.FirstNameRegex(Firstname);
             userRegex.LastNameRegex(LastName);
             userRegex.EmailRegex(Email);
+            userRegex.MobileNumberRegex(MobileNumber);
         }
     }
 }
