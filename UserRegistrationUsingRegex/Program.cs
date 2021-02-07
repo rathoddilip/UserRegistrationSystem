@@ -20,13 +20,24 @@ namespace UserRegistrationUsingRegex
         internal void LastNameRegex(string LastName)
         {
             Regex LastNameregex = new Regex("^[A-Z][a-zA-Z]{2,}$");
-            Console.WriteLine("Firstname: " + LastName);
+            Console.WriteLine("Lastname: " + LastName);
 
             if (LastNameregex.IsMatch(LastName))
                 Console.WriteLine("Valid last name");
             else
                 Console.WriteLine("Invalid last name");
         }
+        internal void EmailRegex(string Email)
+        {
+            Regex Emailregex = new Regex("^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}(.[][a-zA-Z]{2})*$");
+            Console.WriteLine("Email: " + Email);
+
+            if (Emailregex.IsMatch(Email))
+                Console.WriteLine("Valid EmailId");
+            else
+                Console.WriteLine("Invalid EmailId");
+        }
+
     }
     class Program
     {
@@ -36,8 +47,10 @@ namespace UserRegistrationUsingRegex
             UserRegex userRegex = new UserRegex();
             string Firstname = "Dilip";
             string LastName = "Rathod";
+            string Email = "abc.xyz@bl.co.in";
             userRegex.FirstNameRegex(Firstname);
             userRegex.LastNameRegex(LastName);
+            userRegex.EmailRegex(Email);
         }
     }
 }
