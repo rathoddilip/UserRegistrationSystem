@@ -58,7 +58,17 @@ namespace UserRegistrationUsingRegex
             else
                 Console.WriteLine("Invalid Password");
         }
-        
+        internal void PasswordRule2Regex(string PasswordRule2)
+        {
+            Regex PasswordRule2regex = new Regex(@"^(?=.*[A-Z]).{8,}$");
+            Console.WriteLine("PasswordRule2: " + PasswordRule2);
+
+            if (PasswordRule2regex.IsMatch(PasswordRule2))
+                Console.WriteLine("Valid Password");
+            else
+                Console.WriteLine("Invalid Password");
+        }
+
     }
     class Program
     {
@@ -70,13 +80,15 @@ namespace UserRegistrationUsingRegex
             string LastName = "Rathod";//valid
             string Email = "abc.xyz@bl.co.in";//valid
             string MobileNumber="91 7756994045";//valid
-            string PasswordRule1 = "admin@1";//valid
+            string PasswordRule1 = "Adm*in@12&3$&";//valid
+            string PasswordRule2 = "ad$$&didDdsfsn41";//valid
             userRegex.FirstNameRegex(Firstname);
             userRegex.LastNameRegex(LastName);
             userRegex.EmailRegex(Email);
             userRegex.MobileNumberRegex(MobileNumber);
             userRegex.PasswordRule1Regex(PasswordRule1);
-           
+            userRegex.PasswordRule2Regex(PasswordRule2);
+
         }
     }
 }
