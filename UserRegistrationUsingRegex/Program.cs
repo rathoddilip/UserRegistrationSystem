@@ -44,9 +44,19 @@ namespace UserRegistrationUsingRegex
             Console.WriteLine("Mobile Numbe: " + MobileNumber);
 
             if (MobileNumberregex.IsMatch(MobileNumber))
-                Console.WriteLine("Valid Mobile Numbe");
+                Console.WriteLine("Valid Mobile Number");
             else
-                Console.WriteLine("Invalid Mobile Numbe");
+                Console.WriteLine("Invalid Mobile Number");
+        }
+        internal void PasswordRegex(string PasswordRule1)
+        {
+            Regex Passwordregex = new Regex(@"^.{8,}$");
+            Console.WriteLine("Mobile Numbe: " + PasswordRule1);
+
+            if (Passwordregex.IsMatch(PasswordRule1))
+                Console.WriteLine("Valid Password");
+            else
+                Console.WriteLine("Invalid Password");
         }
     }
     class Program
@@ -59,10 +69,12 @@ namespace UserRegistrationUsingRegex
             string LastName = "Rathod";
             string Email = "abc.xyz@bl.co.in";
             string MobileNumber="91 7756994045";
+            string PasswordRule1 = "Admin@1234";
             userRegex.FirstNameRegex(Firstname);
             userRegex.LastNameRegex(LastName);
             userRegex.EmailRegex(Email);
             userRegex.MobileNumberRegex(MobileNumber);
+            userRegex.PasswordRegex(PasswordRule1);
         }
     }
 }
